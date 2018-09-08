@@ -1,10 +1,11 @@
 EP1_9350011 <- function(arqEntrada, arqSaida) {
     source('D:/las_descargas/github-projects/PCS3438-EP1/vizProx.R')
     source('D:/las_descargas/github-projects/PCS3438-EP1/calcCusto.R')
+    source('D:/las_descargas/github-projects/PCS3438-EP1/twoOpt.R')
 
     tInicial <- Sys.time()
 
-    # EP1_9350011('D:/las_descargas/github-projects/PCS3438-EP1/entrada.csv','D:/las_descargas/github-projects/PCS3438-EP1/saida.csv')
+    # EP1_9350011('D:/las_descargas/github-projects/PCS3438-EP1/formato.csv','D:/las_descargas/github-projects/PCS3438-EP1/saida.csv')
     matAdj <- as.matrix(read.table(arqEntrada, sep = ',', header=TRUE))
 
     # Algoritmo Nearest Neighbour
@@ -24,8 +25,8 @@ EP1_9350011 <- function(arqEntrada, arqSaida) {
     }
 
     # 2-opt
-
-
+ #   melhorRota <- twoOpt(melhorRota, matAdj)
+ #   menorCusto <- calcCusto(melhorRota, matAdj)
 
     # Imprime resultado e salva no arquivo de saida
     tExec <- Sys.time() - tInicial
