@@ -5,23 +5,24 @@ vizProx <- function(start, matViz, matAdj) {
     rota[1] <- start
     visitado[start] <- 1
 
-    for (i in 1:ncol(matAdj)) {
+    for (i in 1:(ncol(matAdj) - 1)) {
         naMatViz <- rep(0, ncol(matViz))
+        atual <- rota[i]
         for (j in 1:ncol(matAdj)) {
-            if (matViz[i, j] == -1) {
+            if (matViz[atual, j] == -1) {
                 # encontra j-esimo minimo
                 min <- Inf
                 iMin <- -1
                 for (k in 1:ncol(matAdj)) {
-                    if (matAdj[i, k] < min && !naMatViz[k]) {
-                        min <- matAdj[i, k]
+                    if (matAdj[atual, k] < min && !naMatViz[k]) {
+                        min <- matAdj[atual, k]
                         iMin <- k
                     }
                 }
                 # atualiza matriz de vizinhos mais proximos
-                matViz[i, j] <- iMin
+                matViz[atual, j] <- iMin
             }
-            iVizProx <- matViz[i, j]
+            iVizProx <- matViz[atual, j]
             naMatViz[iVizProx] <- 1
             if (!visitado[iVizProx]) {
                 rota[i + 1] <- iVizProx
