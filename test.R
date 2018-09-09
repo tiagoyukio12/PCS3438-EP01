@@ -23,7 +23,6 @@ cat('Custo: ', custo, '\n')
 novaRota <- swap(rota, 2, 4)
 cat('Nova rota: ', novaRota, '\n')
 
-
 # 2-opt
 rotaRuim <- c(2,4,1,3,2)
 novaRota <- twoOpt(rotaRuim, matAdj)
