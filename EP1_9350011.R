@@ -25,8 +25,8 @@ EP1_9350011 <- function(arqEntrada, arqSaida) {
     }
 
     # 2-opt
- #   melhorRota <- twoOpt(melhorRota, matAdj)
- #   menorCusto <- calcCusto(melhorRota, matAdj)
+    melhorRota <- twoOpt(melhorRota, matAdj)
+    menorCusto <- calcCusto(melhorRota, matAdj)
 
     # Imprime resultado e salva no arquivo de saida
     tExec <- Sys.time() - tInicial

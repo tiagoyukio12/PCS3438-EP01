@@ -20,7 +20,7 @@ custo <- calcCusto(rota, matAdj)
 cat('Custo: ', custo, '\n')
 
 # troca de rotas
-novaRota <- swap(rota, 2, 4, matAdj)
+novaRota <- swap(rota, 2, 4)
 cat('Nova rota: ', novaRota, '\n')
 
 
