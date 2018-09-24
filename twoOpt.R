@@ -1,6 +1,6 @@
 twoOpt <- function(rota, matAdj) {
-    source('D:/las_descargas/github-projects/PCS3438-EP1/swap.R')
-    source('D:/las_descargas/github-projects/PCS3438-EP1/calcCusto.R')
+    source('./swap.R')
+    source('./calcCusto.R')
     
     # Verifica se rota foi reduzida desde a ultima iteracao
     reduziuRota <- TRUE

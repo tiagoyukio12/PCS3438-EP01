@@ -1,7 +1,7 @@
 EP1_9350011 <- function(arqEntrada, arqSaida) {
-    source('D:/las_descargas/github-projects/PCS3438-EP1/vizProx.R')
-    source('D:/las_descargas/github-projects/PCS3438-EP1/calcCusto.R')
-    source('D:/las_descargas/github-projects/PCS3438-EP1/twoOpt.R')
+    source('./vizProx.R')
+    source('./calcCusto.R')
+    source('./twoOpt.R')
 
     tInicial <- Sys.time()
 
@@ -38,3 +38,4 @@ EP1_9350011 <- function(arqEntrada, arqSaida) {
     resultado <- c(menorCusto, tExec, melhorRota)
     write.table(resultado, file = arqSaida, sep = ",", row.names = FALSE, col.names = FALSE)
 }
+

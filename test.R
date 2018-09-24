@@ -1,9 +1,9 @@
-source('D:/las_descargas/github-projects/PCS3438-EP1/vizProx.R')
-source('D:/las_descargas/github-projects/PCS3438-EP1/calcCusto.R')
-source('D:/las_descargas/github-projects/PCS3438-EP1/twoOpt.R')
-source('D:/las_descargas/github-projects/PCS3438-EP1/swap.R')
+source('./vizProx.R')
+source('./calcCusto.R')
+source('./twoOpt.R')
+source('./swap.R')
 
-matAdj <- as.matrix(read.table('D:/las_descargas/github-projects/PCS3438-EP1/formato.csv', sep = ',', header=TRUE))
+matAdj <- as.matrix(read.table('./formato.csv', sep = ',', header=TRUE))
 
 matViz <- matrix(-1, ncol(matAdj), ncol(matAdj))
 
