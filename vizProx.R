@@ -19,7 +19,7 @@ vizProx <- function(start, matViz, matAdj) {
             if (matViz[atual, j] == -1) {
                 # Encontra j-esimo minimo
                 min <- Inf
-                iMin <- -1
+                iMin <- -2
                 for (k in 1:ncol(matAdj)) {
                     if (matAdj[atual, k] < min && !naMatViz[k]) {
                         min <- matAdj[atual, k]
@@ -30,6 +30,11 @@ vizProx <- function(start, matViz, matAdj) {
                 matViz[atual, j] <- iMin
             }
             iVizProx <- matViz[atual, j]
+            if (iVizProx == -2) {
+                # Nao foi encontrado caminho possivel
+                retList <- list("matViz" = matViz, "rota" = rota)
+                return(retList)
+            }
             naMatViz[iVizProx] <- 1
             # Verifica se j-esimo minimo ja foi visitado
             if (!visitado[iVizProx]) {
